@@ -54,12 +54,12 @@ class PathFollowingSimulator:
     def calculate_cross_track_error(self, state, path_x, path_y):
         """크로스 트랙 에러 계산 (부호 포함)"""
         # 가장 가까운 경로점에서 차량으로의 벡터
-        vehicle_x = xxxxxx # TODO: 차량 x 좌표
-        vehicle_y = xxxxxx # TODO: 차량 y 좌표
-        distances = xxxxxx # TODO: 거리 계산식 작성
+        vehicle_x = state.x # TODO: 차량 x 좌표
+        vehicle_y = state.y # TODO: 차량 y 좌표
+        distances = np.sqrt((path_x-vehicle_x)**2+(path_y-vehicle_y)**2) # TODO: 거리 계산식 작성
         closest_idx = np.argmin(distances)
-        closest_x = xxxxxx # TODO: 가장 가까운 경로점 x 좌표
-        closest_y = xxxxxx # TODO: 가장 가까운 경로점 y 좌표
+        closest_x = path_x(closest_idx) # TODO: 가장 가까운 경로점 x 좌표
+        closest_y = path_y(closest_idx) # TODO: 가장 가까운 경로점 y 좌표
         dx = vehicle_x - closest_x
         dy = vehicle_y - closest_y
         
